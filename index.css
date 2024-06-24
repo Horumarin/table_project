@@ -1,0 +1,79 @@
+#myButton_1 {
+        position: absolute;
+        top: 100px; /* 初期位置の上からの距離 */
+        left: 1000px; /* 初期位置の左からの距離 */
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: grab; /* ドラッグ時のカーソルスタイル */
+    }
+
+    #myButton_2 {
+        position: absolute;
+        top: 200px; /* 初期位置の上からの距離 */
+        left: 1000px; /* 初期位置の左からの距離 */
+        background-color: red;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: grab; /* ドラッグ時のカーソルスタイル */
+    }
+
+    #myButton_3 {
+        position: absolute;
+        top: 300px; /* 初期位置の上からの距離 */
+        left: 1000px; /* 初期位置の左からの距離 */
+        background-color: black;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: grab; /* ドラッグ時のカーソルスタイル */
+    }
+
+    #myButton_4 {
+        position: absolute;
+        top: 400px; /* 初期位置の上からの距離 */
+        left: 1000px; /* 初期位置の左からの距離 */
+        background-color: blue;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: grab; /* ドラッグ時のカーソルスタイル */
+    }
+
+
+    .image-container {
+        text-align: center; /* 画像を中央揃え */
+    }
+
+    .image-container img {
+        max-width: 100%; /* 画像の最大幅を親要素に合わせる */
+        height: auto; /* アスペクト比を維持しつつ、高さを自動調整 */
+        margin: 10px; /* 画像の周囲に余白を追加 */
+        width: 950px; /* 画像の幅を固定する場合 */
+        height: 1200px; /* 画像の高さを固定する場合 */
+    }
+
+    @media (max-width: 768px) {
+        .image-container img {
+            width: 100%; /* レスポンシブデザインで画像を100%幅に調整 */
+            height: auto;
+        }
+    }
