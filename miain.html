@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>表</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static',filename='css/index.css') }}">
+    <style>
+        table {
+            align: left;
+            width: 70%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 16px;
+
+        }
+        th {
+            background-color: lightgray;;
+
+        }
+        .narrow {
+            width: 15%;
+        }
+    </style>
+</head>
+<body>
+{% for i in sora %}
+    <button id="myButton_1" draggable="true" onmousedown="startDrag(event)">{{ i }}</button>
+{% endfor %}
+
+{% for i in umi %}
+    <button id="myButton_2" draggable="true" onmousedown="startDrag(event)">{{ i }}</button>
+{% endfor %}
+
+{% for i in hare %}
+    <button id="myButton_3" draggable="true" onmousedown="startDrag(event)">{{ i }}</button>
+{% endfor %}
+
+{% for i in sonota %}
+    <button id="myButton_4" draggable="true" onmousedown="startDrag(event)">{{ i }}</button>
+{% endfor %}
+
+
+    <table>
+        <colgroup>
+            <col class="narrow">
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Hello</th>
+                <th>晴</th>
+                <th>海</th>
+                <th>空</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>入れ込み</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>水回り</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ベット</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>茶器</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>掃除機</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>はぎ・まとめ</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>部屋風呂</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>共用</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="2">大浴場</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>深夜</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+<script>
+    var offsetX, offsetY;
+
+    function startDrag(e) {
+        var button = e.target;
+        e.preventDefault();
+        offsetX = e.clientX - button.getBoundingClientRect().left;
+        offsetY = e.clientY - button.getBoundingClientRect().top;
+
+        document.onmousemove = function(e) {
+            button.style.left = (e.clientX - offsetX) + 'px';
+            button.style.top = (e.clientY - offsetY) + 'px';
+        }
+
+        document.onmouseup = function() {
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+    }
+</script>
+</body>
+
+</html>
